@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Convidado {
+  id           Int      @id @default(autoincrement())
+  nomeCompleto String
+  status       String?  @default("pendente")
+  acompanhante String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Presente {
+  id        Int      @id @default(autoincrement())
+  descricao String
+  valor     Float
+  quemDeu   String?
+  status    String?  @default("disponivel")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Foto {
+  id        Int      @id @default(autoincrement())
+  url       String
+  descricao String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model InfosCasamento {
+  id        Int      @id @default(autoincrement())
+  data      String
+  local     String
+  descricao String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
