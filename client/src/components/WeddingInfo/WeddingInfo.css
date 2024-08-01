@@ -1,0 +1,32 @@
+/* WeddingInfo.css */
+.wedding-info-container {
+    display: flex;
+    align-items: center;
+    height: 100vh; /* Ajuste a altura conforme necessário */
+  }
+  
+  .info-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .divider {
+    width: 2px;
+    background-color: #ccc;
+    height: 100%; /* Ajuste a altura conforme necessário */
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
