@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { Present } from '../../interfaces/Present';
 
