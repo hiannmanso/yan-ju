@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface WeddingInfoProps {
   info: {
     date: string;
