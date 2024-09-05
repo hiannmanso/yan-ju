@@ -1,8 +1,8 @@
-import { Guest, GuestList } from "./../interfaces/guest.interface";
+import { Guest } from "./../interfaces/guest.interface";
 import { Request, Response } from "express";
 import guestService from "../services/guest.service";
 export async function guestPOST(req: Request, res: Response) {
-  const data: GuestList = req.body;
+  const data: Guest = req.body;
   const result = await guestService.createNew(data);
   res.status(200).send(result);
 }

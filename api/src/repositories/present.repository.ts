@@ -1,8 +1,8 @@
-import { Present, PresentList } from "./../interfaces/present.interface";
+import { Present } from "./../interfaces/present.interface";
 import { prisma } from "../config/database";
 
-async function insertMany(data: PresentList) {
-  const result = await prisma.presente.createMany({ data: data.list });
+async function insert(data: Present) {
+  const result = await prisma.presente.create({ data });
   return result;
 }
 async function update(data: Present) {
@@ -10,11 +10,16 @@ async function update(data: Present) {
     where: { descricao: data.descricao },
     data,
   });
+  
   return result;
 }
 async function getAll() {
   const result = await prisma.presente.findMany();
   return result;
 }
-const presentRepository = { insertMany, update, getAll };
+async function getONe(descricao:string) {
+  const result = await prisma.presente.findMany({where:{descricao}});
+  return result;
+}
+const presentRepository = { insert, update, getAll,getONe };
 export default presentRepository;

@@ -1,8 +1,9 @@
 import { prisma } from "../config/database";
-import { Guest, GuestList } from "../interfaces/guest.interface";
+import { Guest } from "../interfaces/guest.interface";
 
-async function insertMany(data: GuestList) {
-  const result = await prisma.convidado.createMany({ data: data.list });
+async function insert(data: Guest) {
+  console.log(data)
+  const result = await prisma.convidado.create({ data });
   return result;
 }
 async function update(data: Guest) {
@@ -16,5 +17,5 @@ async function getAll() {
   const result = await prisma.convidado.findMany();
   return result;
 }
-const guestRepository = { insertMany, update, getAll };
+const guestRepository = { insert, update, getAll };
 export default guestRepository;

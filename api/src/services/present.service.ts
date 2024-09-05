@@ -1,17 +1,17 @@
-import { Guest, GuestList } from "../interfaces/guest.interface";
-import { Present, PresentList } from "../interfaces/present.interface";
+
+import { Present } from "../interfaces/present.interface";
 import presentRepository from "../repositories/present.repository";
 
-async function createNew(data: PresentList) {
-  const result = presentRepository.insertMany(data);
+async function createNew(data: Present) {
+  const result = await presentRepository.insert(data);
   return result;
 }
 async function updateStatus(data: Present) {
-  const result = presentRepository.update(data);
+  const result = await presentRepository.update(data);
   return result;
 }
 async function getList() {
-  const result = presentRepository.getAll();
+  const result = await presentRepository.getAll();
   return result;
 }
 const presentService = { createNew, updateStatus, getList };

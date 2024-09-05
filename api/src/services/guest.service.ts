@@ -1,8 +1,8 @@
 import { Guest, GuestList } from "../interfaces/guest.interface";
-import guestRepository from "../repositories/GUEST.repository";
+import guestRepository from "../repositories/guest.repository";
 
-async function createNew(data: GuestList) {
-  const result = guestRepository.insertMany(data);
+async function createNew(data: Guest) {
+  const result = guestRepository.insert(data);
   return result;
 }
 async function updateStatus(data: Guest) {
