@@ -21,6 +21,7 @@ export function GiftsList() {
       method: "GET",
       url: `${import.meta.env.VITE_API_URL}/present`,
     }).then(response => {
+      console.log(response)
       setPresentList(response.data);
     }).catch(error => {
       console.log(error);
@@ -53,8 +54,19 @@ export function GiftsList() {
       }
     }).then(response => {
       toast.success(`Seu presente foi registrado, muito obrigado!!`);
+      axios({
+        method: "GET",
+        url: `${import.meta.env.VITE_API_URL}/present`,
+      }).then(response => {
+        console.log(response)
+        setPresentList(response.data);
+      }).catch(error => {
+        console.log(error);
+      });
+      setIsModalOpen(!isModalOpen)
     }).catch(error => {
       console.log(error);
+      
     });
     closeModal();
   };
