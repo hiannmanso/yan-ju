@@ -3,6 +3,7 @@ import { Home } from './pages/Home'
 import ConfirmPresence from './pages/ConfirmPresence'
 import Presents from './pages/Presents'
 import { Infos } from './pages/Infos'
+import Toast from './Toast'
 
 
 
@@ -12,6 +13,7 @@ export default function App() {
 			<BrowserRouter>
 			
 
+						<Toast />
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/confirmar-presenca' element={<ConfirmPresence/>} />

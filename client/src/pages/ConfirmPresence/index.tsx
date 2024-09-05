@@ -9,8 +9,8 @@ function confirmPresence() {
       <Header/>
       <div className="">
 
-      <ConfirmationPresence />
       <WeddingCountdown weddingDate="2024-10-26T00:00:00" />
+      <ConfirmationPresence />
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import flower1 from '../../assets/flower1.png'
+import flower2 from '../../assets/flower2.png'
+import flower3 from '../../assets/flower3.png'
 interface WeddingCountdownProps {
   weddingDate: string; // Formato ISO, ex: '2024-12-31T00:00:00'
 }
@@ -50,7 +52,7 @@ const WeddingCountdown: React.FC<WeddingCountdownProps> = ({ weddingDate }) => {
 
   return (
     <div className="relative sm:static bg-cream p-6 sm:p-8 rounded-lg shadow-lg text-center max-w-screen-lg mx-auto">
-      <h2 className="text-2xl sm:text-3xl font-bold text-customBrown mb-4">Juliana & Yan</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-customBrown mb-4" style={{ fontFamily: '"Dancing Script", cursive', fontWeight: 600 }}>Juliana & Yan</h2>
       <div className="flex items-center justify-center flex-wrap">
         {timerComponents.length ? (
           timerComponents.map((component, index) => (
@@ -58,7 +60,7 @@ const WeddingCountdown: React.FC<WeddingCountdownProps> = ({ weddingDate }) => {
               {component}
               {index < timerComponents.length - 1 && (
                 <img
-                  src="https://via.placeholder.com/50" // Substitua pelo URL da imagem de flor que desejar
+                  src={flower3} // Substitua pelo URL da imagem de flor que desejar
                   alt="flower"
                   className="mx-2 sm:mx-4 w-8 h-8 sm:w-10 sm:h-10"
                 />

@@ -14,8 +14,8 @@ export function Infos() {
 	return (
 		<>
         <Header/>
-        <WeddingInfo info={weddingDetails} coupleImage={coupleImageUrl} />
 		<WeddingCountdown weddingDate="2024-10-26T00:00:00" />
+        <WeddingInfo info={weddingDetails} coupleImage={coupleImageUrl} />
 		</>
 	)
 }

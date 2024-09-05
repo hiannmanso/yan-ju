@@ -1,4 +1,5 @@
 import React from "react";
+import photo from '../../assets/JY-3.jpg'
 interface WeddingInfoProps {
   info: {
     date: string;
@@ -15,7 +16,8 @@ const WeddingInfo: React.FC<WeddingInfoProps> = ({ info, coupleImage }) => {
       <div className="w-full max-w-3xl bg-white rounded-lg shadow-lg overflow-hidden md:flex">
         {/* Informações do Casamento */}
         <div className="w-full md:w-1/2 p-6">
-          <h2 className="text-3xl font-bold mb-4 text-customBrown">Informações do Casamento</h2>
+          <h2 className="text-3xl font-bold mb-4 text-customBrown" style={{ fontFamily: '"Dancing Script", cursive', fontWeight: 600 }}>
+            Informações do Casamento</h2>
           <div className="mb-4">
             <h3 className="text-xl font-semibold text-customBrown">Data</h3>
             <p className="text-lg">{info.date}</p>
@@ -40,7 +42,7 @@ const WeddingInfo: React.FC<WeddingInfoProps> = ({ info, coupleImage }) => {
         {/* Imagem do Casal */}
         <div className="w-full md:w-1/2">
           <img
-            src={coupleImage}
+            src={photo}
             alt="Casal"
             className="w-full h-full object-cover"
           />
