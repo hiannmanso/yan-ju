@@ -92,7 +92,7 @@ export function GiftsList() {
             </div>
             <button
               onClick={() =>  openModal(item)}
-              className={`py-2 px-4 rounded-md transition-colors duration-300 ${item.quantidade > 0 ? 'bg-customBrown text-white hover:bg-opacity-90' : 'bg-gray-400 text-gray-700 cursor-not-allowed'}`}
+              className={`py-2 px-4 rounded-md transition-colors duration-300 'bg-customBrown text-white hover:bg-opacity-90`}
             
             >
               Escolher Presente
