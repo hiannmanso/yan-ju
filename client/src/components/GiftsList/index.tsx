@@ -82,13 +82,13 @@ export function GiftsList() {
         {sortedPresentList.map((item, index) => (
           <div
             key={index}
-            className={`bg-white p-4 rounded-lg shadow-lg mb-4 flex items-center ${item.quantidade === 0 ? 'opacity-50' : ''}`}
+            className={`bg-white p-4 rounded-lg shadow-lg mb-4 flex items-center`}
           >
             <img src={item.image} alt={item.descricao} className="w-20 h-20 rounded-full mr-4" />
             <div className="flex-1">
               <h3 className="text-lg font-bold text-customBrown">{item.descricao}</h3>
               <p className="text-customBrown">Valor: R${item.valor}</p>
-              <p className="text-customBrown">Disponíveis: {item.quantidade}</p>
+              {/* <p className="text-customBrown">Disponíveis: {item.quantidade}</p> */}
             </div>
             <button
               onClick={() => item.quantidade > 0 && openModal(item)}
@@ -114,7 +114,6 @@ export function GiftsList() {
             <img src={selectedPresent.image} alt={selectedPresent.descricao} className="w-40 h-40 rounded-full mb-4" />
             <h3 className="text-lg font-bold text-customBrown">{selectedPresent.descricao}</h3>
             <p className="text-customBrown">Valor: R${selectedPresent.valor}</p>
-            <p className="text-customBrown">Disponíveis: {selectedPresent.quantidade}</p>
             <p className="text-customBrown"><b>PIX: chavepix</b></p>
 
             {/* Inputs para nome, email e mensagem */}
