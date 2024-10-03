@@ -91,9 +91,9 @@ export function GiftsList() {
               {/* <p className="text-customBrown">Disponíveis: {item.quantidade}</p> */}
             </div>
             <button
-              onClick={() => item.quantidade > 0 && openModal(item)}
+              onClick={() =>  openModal(item)}
               className={`py-2 px-4 rounded-md transition-colors duration-300 ${item.quantidade > 0 ? 'bg-customBrown text-white hover:bg-opacity-90' : 'bg-gray-400 text-gray-700 cursor-not-allowed'}`}
-              disabled={item.quantidade === 0}
+            
             >
               Escolher Presente
             </button>
