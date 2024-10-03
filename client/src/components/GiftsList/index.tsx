@@ -58,7 +58,7 @@ export function GiftsList() {
         method: "GET",
         url: `${import.meta.env.VITE_API_URL}/present`,
       }).then(response => {
-        console.log(response)
+        console.log('responsee',response)
         setPresentList(response.data);
       }).catch(error => {
         console.log(error);
@@ -79,7 +79,7 @@ export function GiftsList() {
       <div className="w-full max-w-4xl">
         <h2 className="text-2xl font-bold mb-4 text-customBrown">Lista de Presentes</h2>
         <p className="mb-4 text-customBrown">Total de Presentes: {sortedPresentList.length}</p>
-        {sortedPresentList.map((item, index) => (
+        {presentList.map((item, index) => (
           <div
             key={index}
             className={`bg-white p-4 rounded-lg shadow-lg mb-4 flex items-center`}
@@ -92,14 +92,14 @@ export function GiftsList() {
             </div>
             <button
               onClick={() =>  openModal(item)}
-              className={`py-2 px-4 rounded-md transition-colors duration-300 'bg-customBrown text-white hover:bg-opacity-90`}
+              className={`py-2 px-4 rounded-md transition-colors duration-300 bg-customBrown text-white hover:bg-opacity-90`}
             
             >
               Escolher Presente
             </button>
           </div>
         ))}
-      </div>
+      </div>er
 
       <Modal
         isOpen={isModalOpen}
@@ -114,9 +114,17 @@ export function GiftsList() {
             <img src={selectedPresent.image} alt={selectedPresent.descricao} className="w-40 h-40 rounded-full mb-4" />
             <h3 className="text-lg font-bold text-customBrown">{selectedPresent.descricao}</h3>
             <p className="text-customBrown">Valor: R${selectedPresent.valor}</p>
-            <p className="text-customBrown"><b>PIX: chavepix</b></p>
+          <p className='text-customBrown'><b>PIX: </b></p>
+            <p className="text-customBrown">
+  <b>
+    
+    <a href={`${selectedPresent.chavePix}`} target="_blank" rel="noopener noreferrer">
+      {selectedPresent.chavePix}
+    </a>
+  </b>
+</p>
 
-            {/* Inputs para nome, email e mensagem */}
+            {/* Inputs para nome, email e mensage */}
             <div className="mb-4">
               <label className="block text-customBrown mb-2" htmlFor="nome">
                 Nome

@@ -21,6 +21,7 @@ model Presente {
   descricao String
   valor     Float
   quantidade Int
+  chavePix String?
   image String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
