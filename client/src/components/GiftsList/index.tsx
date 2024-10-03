@@ -124,7 +124,7 @@ export function GiftsList() {
   </b>
 </p>
 
-            {/* Inputs para nome, email e mensage */}
+        
             <div className="mb-4">
               <label className="block text-customBrown mb-2" htmlFor="nome">
                 Nome
