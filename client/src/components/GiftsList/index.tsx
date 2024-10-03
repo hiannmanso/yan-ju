@@ -99,7 +99,7 @@ export function GiftsList() {
             </button>
           </div>
         ))}
-      </div>er
+      </div>
 
       <Modal
         isOpen={isModalOpen}
