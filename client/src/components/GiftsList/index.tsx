@@ -58,7 +58,6 @@ export function GiftsList() {
         method: "GET",
         url: `${import.meta.env.VITE_API_URL}/present`,
       }).then(response => {
-        console.log('responsee',response)
         setPresentList(response.data);
       }).catch(error => {
         console.log(error);
