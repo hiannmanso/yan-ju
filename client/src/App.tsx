@@ -4,7 +4,7 @@ import ConfirmPresence from './pages/ConfirmPresence'
 import Presents from './pages/Presents'
 import { Infos } from './pages/Infos'
 import Toast from './Toast'
-import { LIstaPresentes } from './pages/LIstaPresentes'
+import { ListaPresentes } from './pages/LIstaPresentes'
 
 
 
@@ -20,7 +20,7 @@ export default function App() {
 						<Route path='/confirmar-presenca' element={<ConfirmPresence/>} />
 						<Route path='/lista-de-presentes' element={<Presents />} />
 						<Route path='/informacoes' element={<Infos />} />
-						<Route path='/lista-pessoas' element={<LIstaPresentes />} />
+						<Route path='/lista-pessoas' element={<ListaPresentes />} />
 					</Routes>
 	
 		
