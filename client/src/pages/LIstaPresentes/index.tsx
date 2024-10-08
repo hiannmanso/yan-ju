@@ -42,9 +42,9 @@ export function ListaPresentes() {
                         <li key={item.id} className="p-4 border-b last:border-b-0 hover:bg-gray-100">
                             <div className="flex justify-between">
                                 <span className="font-semibold">{item.nomeCompleto}</span>
-                                <span className={`text-sm ${item.status === 'pendente' ? 'text-red-500' : 'text-green-500'}`}>
+                                {/* <span className={`text-sm ${item.status === 'pendente' ? 'text-red-500' : 'text-green-500'}`}>
                                     {item.status}
-                                </span>
+                                </span> */}
                             </div>
                             {item.acompanhante && (
                                 <div className="text-gray-500 text-sm">
