@@ -21,9 +21,9 @@ export function ListaPresentes() {
             url: `${import.meta.env.VITE_API_URL}/guest`,
         })
         .then(response => {
-            // Filtrar nomes completos únicos
+            // Asserção de tipo para os dados recebidos
             const uniquePresentes = Array.from(
-                new Map(response.data.map((item: Presente) => [item.nomeCompleto, item])).values()
+                new Map((response.data as Presente[]).map((item: Presente) => [item.nomeCompleto, item])).values()
             );
             setPresentes(uniquePresentes);
         })
@@ -42,7 +42,9 @@ export function ListaPresentes() {
                         <li key={item.id} className="p-4 border-b last:border-b-0 hover:bg-gray-100">
                             <div className="flex justify-between">
                                 <span className="font-semibold">{item.nomeCompleto}</span>
-                                
+                                <span className={`text-sm ${item.status === 'pendente' ? 'text-red-500' : 'text-green-500'}`}>
+                                    {item.status}
+                                </span>
                             </div>
                             {item.acompanhante && (
                                 <div className="text-gray-500 text-sm">
